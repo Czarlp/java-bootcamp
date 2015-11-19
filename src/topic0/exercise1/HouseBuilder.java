@@ -3,20 +3,51 @@ package topic0.exercise1;
 public class HouseBuilder implements Builder {
 	
 	protected House house;
-
-	@Override
-	public void buildPart() {
+	protected Foundations foundations;
+	protected Columns columns;
+	protected Roof roof;
+	
+	public HouseBuilder() {
 		
-		house = new House();
-		house.setPrice(1500000.50);
-		house.setSquareMts(20);
-		house.setOwner("Ricardo");
-		house.setLocation("Texas");
+		house = new House("English House");
+		foundations = new Foundations();
+		columns = new Columns();
+		roof = new Roof();
 	}
 	
-	public void getResult() {
-			System.out.printf("The house's owner is %s, its price it's $ %.2f, it has %d square meters.\n" + 
-					"It's located in %s.\n", house.getOwner(), house.getPrice(), house.getSquareMts(), house.getLocation());
+	@Override
+	public void buildFoundations() {
+		
+		foundations.setMaterial("Porlan");
+		foundations.setKg(500);
+		foundations.setPrice(250.00);
+		foundations.setDryingTime(48);
+		house.setFoundations(foundations);
+		
+	}
+	
+	@Override
+	public void buildColumns() {
+		
+		columns.setMaterial("Hierro");
+		columns.setPrice(375.00);
+		columns.setQuantity(12);
+		house.setColumns(columns);
+		
+	}
+	
+	@Override
+	public void buildRoof() {
+		
+		roof.setMaterial("Chapa");
+		roof.setPrice(175.00);
+		roof.setQuantity(10);
+		house.setRoof(roof);
+	}
+	
+	@Override
+	public House getHouse() {
+		return house;
 	}
 	
 }

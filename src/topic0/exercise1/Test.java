@@ -4,17 +4,17 @@ public class Test {
 	
 	public static void main(String[] args) {
 		
-		HouseBuilder builder = new HouseBuilder();
-		CabinBuilder cabin = new CabinBuilder();
-		Director director = new Director(builder);
+		HouseBuilder houseBuilder = new HouseBuilder();
+		CabinBuilder cabinBuilder = new CabinBuilder();
+		Director director = new Director(houseBuilder);
 		
 		director.construct();
-		builder.getResult();
+		System.out.print(houseBuilder.getHouse());
 		
 		System.out.println();
 		
-		director.setBuilder(cabin);
+		director.setBuilder(cabinBuilder);
 		director.construct();
-		cabin.getResult();
+		System.out.print(cabinBuilder.getHouse());
 	}
 }

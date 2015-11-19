@@ -7,12 +7,14 @@ public class Test {
 		Factory creator;
 		creator = new HospitalFactory();
 		
-		Hospital hospital1 = creator.create();
+		//Public hospital
+		Hospital hospital1 = creator.create(0);
 		hospital1.budget();
 		
 		System.out.println();
 		
-		Hospital hospital2 = creator.create();
+		//Private hospital
+		Hospital hospital2 = creator.create(1);
 		hospital2.budget();
 		
 	}

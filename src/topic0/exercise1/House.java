@@ -2,41 +2,46 @@ package topic0.exercise1;
 
 public class House {
 
-	private double price;
-	private int squareMts;
-	private String owner;
-	private String location;
+	private Columns columns;
+	private Roof roof;
+	private Foundations foundations;
+	private String name;
 	
-	
-	public void setPrice(double price) {
-		this.price = price;
+	public House(String name) {
+		this.name = name;
 	}
 	
-	public void setSquareMts(int squareMts) {
-		this.squareMts = squareMts;
+	public String getName() {
+		return name;
 	}
 	
-	public void setOwner(String owner) {
-		this.owner = owner;
+	public void setColumns(Columns columns) {
+		this.columns = columns;
 	}
 	
-	public String getOwner() {
-		return owner;
+	public Columns getColumns() {
+		return columns;
 	}
 	
-	public Double getPrice() {
-		return price;
+	public void setRoof(Roof roof) {
+		this.roof = roof;
 	}
 	
-	public int getSquareMts() {
-		return squareMts;
+	public Roof getRoof() {
+		return roof;
+	}
+		
+	public void setFoundations(Foundations foundations) {
+		this.foundations = foundations;
 	}
 	
-	public void setLocation(String location) {
-		this.location = location;
+	public Foundations getFoundations() {
+		return foundations;
 	}
 	
-	public String getLocation() {
-		return location;
+	@Override
+	public String toString() {
+		return "Name: " + name + "\nTotal foundations: $ " + foundations.total() + "\nTotal columns: $ "
+				+ columns.total() + "\nTotal roof: $ " + roof.total() + "\n";
 	}
 }

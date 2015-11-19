@@ -4,7 +4,6 @@ public class Director {
 
 	Builder builder;
 	
-	
 	public Director(Builder builder) {
 		this.builder = builder;
 	}
@@ -15,6 +14,9 @@ public class Director {
 	
 	
 	public void construct() {
-		builder.buildPart();
+		
+		builder.buildFoundations();
+		builder.buildColumns();
+		builder.buildRoof();
 	}
 }

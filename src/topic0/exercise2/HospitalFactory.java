@@ -9,12 +9,10 @@ public class HospitalFactory extends Factory {
 	
 	
 	@Override
-	public Hospital create() {
+	public Hospital create(int type) {
 				
-		System.out.print("Enter 0 for Public hospital or 1 for Private hospital: ");
-		value = scanner.nextInt();
+		switch(type) {
 		
-		switch(value) {
 			case 0:
 				hospital = new Public();
 				break;
@@ -26,4 +24,3 @@ public class HospitalFactory extends Factory {
 		return hospital;
 	}
 }
-

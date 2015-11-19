@@ -1,6 +1,11 @@
 package topic0.exercise1;
 
-interface Builder {
+public interface Builder {
 
-	void buildPart();
+	public void buildFoundations();
+	public void buildColumns();
+	public void buildRoof();
+	public House getHouse();
+	
+	
 }
