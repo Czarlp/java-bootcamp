@@ -7,19 +7,18 @@ public class SneakersBuilder extends ItemBuilder {
 	private Item sneakers;
 	
 	@Override
-	public void build() {
+	public Item build() {
 		
 		Scanner scanner = new Scanner(System.in);
 		String name, brand, shoelaceColour;
 		int code, stock;
 		double price;
-		boolean hasHeel;
 		
-		System.out.print("Enter name of the Shoes: ");
+		System.out.print("Enter name of the Sneakers: ");
 		name = scanner.next();
 		System.out.print("Enter code number: ");
 		code = scanner.nextInt();
-		System.out.println("Enter price: $ ");
+		System.out.print("Enter price $ ");
 		price = scanner.nextDouble();
 		System.out.print("Enter brand name: ");
 		brand = scanner.nextLine();
@@ -29,7 +28,8 @@ public class SneakersBuilder extends ItemBuilder {
 		shoelaceColour = scanner.nextLine();
 				
 		sneakers = new Sneakers(name, code, price, brand, shoelaceColour, stock);
-		scanner.close();
+		
+		return sneakers;
 	}
 	
 	@Override

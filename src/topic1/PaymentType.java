@@ -2,7 +2,7 @@ package topic1;
 
 public abstract class PaymentType {
 	
-	private static int ID = 1;
+	public static int ID = 1;
 	private int idNumber;
 	
 	public void setId() {
